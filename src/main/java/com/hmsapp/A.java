@@ -2,11 +2,19 @@ package com.hmsapp;
 
 import org.springframework.security.crypto.bcrypt.BCrypt;
 
-public class A {
+public class A implements Runnable{
 
     public static void main(String[] args) {
-            String password = BCrypt.hashpw("testing",BCrypt.gensalt(10));
-        System.out.println(password);
+
+        A a1 = new A();
+        Thread t1 = new Thread(a1);
+        t1.start();
+
+    }
+
+    @Override
+    public void run() {
+       
 
     }
 }
